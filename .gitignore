@@ -44,3 +44,4 @@ coverage.xml
 ### PROJECT SPECIFIC FILES GO HERE ###
 *.html
 *.cpp
+temp.pdf
