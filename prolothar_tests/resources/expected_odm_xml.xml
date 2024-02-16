@@ -1,0 +1,53 @@
+<Body>
+    <TaskList>
+        <StartTask Identifier="start_task"/>
+        <StopTask Identifier="stop_task">
+            <Actions Language="bal"><![CDATA[return sequence ; ]]></Actions>
+        </StopTask>
+        <ActionTask Identifier="2|A">
+            <Actions Language="bal"><![CDATA[add "A" to sequence ; ]]></Actions>
+        </ActionTask>
+        <ActionTask Identifier="3|A">
+            <Actions Language="bal"><![CDATA[add "A" to sequence ; ]]></Actions>
+        </ActionTask>
+        <ActionTask Identifier="4|B">
+            <Actions Language="bal"><![CDATA[add "B" to sequence ; ]]></Actions>
+        </ActionTask>
+        <ActionTask Identifier="5|C">
+            <Actions Language="bal"><![CDATA[add "C" to sequence ; ]]></Actions>
+        </ActionTask>
+        <ActionTask Identifier="6|D">
+            <Actions Language="bal"><![CDATA[add "D" to sequence ; ]]></Actions>
+        </ActionTask>
+        <ActionTask Identifier="7|E">
+            <Actions Language="bal"><![CDATA[add "E" to sequence ; ]]></Actions>
+        </ActionTask>
+    </TaskList>
+    <NodeList>
+        <TaskNode Identifier="node_0" Task="start_task"/>
+        <TaskNode Identifier="node_1" Task="stop_task"/>
+        <TaskNode Identifier="node_2" Task="2|A"/>
+        <TaskNode Identifier="node_3" Task="3|A"/>
+        <TaskNode Identifier="node_4" Task="4|B"/>
+        <TaskNode Identifier="node_5" Task="5|C"/>
+        <TaskNode Identifier="node_6" Task="6|D"/>
+        <TaskNode Identifier="node_7" Task="7|E"/>
+        <BranchNode Identifier="branch_0_0"/>
+    </NodeList>
+    <TransitionList>
+        <Transition Identifier="transition_0" Source="node_2" Target="node_1"/>
+        <Transition Identifier="transition_1" Source="node_3" Target="node_1"/>
+        <Transition Identifier="transition_2" Source="node_4" Target="node_2"/>
+        <Transition Identifier="transition_3" Source="node_5" Target="node_6"/>
+        <Transition Identifier="transition_4" Source="node_6" Target="node_3"/>
+        <Transition Identifier="transition_5" Source="node_7" Target="node_1"/>
+        <Transition Identifier="transition_6" Source="node_0" Target="node_4">
+            <Conditions Language="bal"><![CDATA[the color of input is equal to "red"]]></Conditions>
+        </Transition>
+        <Transition Identifier="transition_7" Source="node_0" Target="branch_0_0"/>
+        <Transition Identifier="transition_8" Source="branch_0_0" Target="node_5">
+            <Conditions Language="bal"><![CDATA[the size of input is at most 150]]></Conditions>
+        </Transition>
+        <Transition Identifier="transition_9" Source="branch_0_0" Target="node_7"/>
+    </TransitionList>
+</Body>
