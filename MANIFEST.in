@@ -23,3 +23,4 @@ prune prolothar_tests
 prune experiments
 prune deployment
 prune venv*
+prune .venv*
