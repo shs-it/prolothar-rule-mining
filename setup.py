@@ -75,7 +75,7 @@ setup(
     author_email="boris.wiegand@stahl-holding-saar.de",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.11",
         "Topic :: Process Mining"
     ],
     packages=["prolothar_rule_mining"],
