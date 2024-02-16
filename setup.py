@@ -16,7 +16,7 @@
 '''
 #import order is important!
 import pathlib
-from setuptools import setup
+from setuptools import setup, find_namespace_packages
 from distutils.extension import Extension
 from Cython.Build import cythonize
 import os
@@ -78,8 +78,17 @@ setup(
         "Programming Language :: Python :: 3.11",
         "Topic :: Process Mining"
     ],
-    packages=["prolothar_rule_mining"],
+    packages=find_namespace_packages(
+        include=['prolothar_process_discovery*']
+    ),
     include_package_data=True,
+    package_data={
+        "prolothar_rule_mining": [
+            '*','*/*','*/*/*','*/*/*/*','*/*/*/*/*',
+            '*/*/*/*/*/*','*/*/*/*/*/*/*','*/*/*/*/*/*/*/*'
+        ]
+    },
+    exclude_package_data={"": ['*.pyc']},
     ext_modules=cythonize(extensions, language_level = "3"),
     zip_safe=False,
     install_requires=install_reqs
