@@ -76,7 +76,6 @@ setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.11",
-        "Topic :: Process Mining"
     ],
     packages=find_namespace_packages(
         include=['prolothar_process_discovery*']
