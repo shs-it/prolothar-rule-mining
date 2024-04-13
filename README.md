@@ -90,8 +90,8 @@ graph.plot(view=False, filepath='path_to_pdf')
 for node, router in rules_model.get_node_router_table().items():
     print('===============================')
     print(f'rule at node {node}')
-    print(node.get_rule())
-    # alternative: print(node.get_rule().to_html())
+    print(router.get_rule())
+    # alternative: print(router.get_rule().to_html())
 ```
 
 ## Development
