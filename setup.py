@@ -67,10 +67,10 @@ else:
 setup(
     name="prolothar-rule-mining",
     version=version,
-    description="algorithms for process mining and data mining on event sequences",
+    description="algorithms for prediction and rule mining on event sequences",
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://gitlab.dillinger.de/KI/DataScience/processmining/prolothar-process-discovery",
+    url="https://github.com/shs-it/prolothar-rule-mining",
     author="Boris Wiegand",
     author_email="boris.wiegand@stahl-holding-saar.de",
     classifiers=[
@@ -78,7 +78,7 @@ setup(
         "Programming Language :: Python :: 3.11",
     ],
     packages=find_namespace_packages(
-        include=['prolothar_process_discovery*']
+        include=['prolothar_rule_mining*']
     ),
     include_package_data=True,
     package_data={
