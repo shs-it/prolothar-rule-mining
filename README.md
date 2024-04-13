@@ -116,7 +116,8 @@ make test
 ### Deployment
 
 ```bash
-make clean_package || make package && make publish
+make clean_package
+make package && make publish
 ```
 
 ## Versioning
