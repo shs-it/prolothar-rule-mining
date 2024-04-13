@@ -115,9 +115,16 @@ make test
 
 ### Deployment
 
+1. Change the version in version.txt
+2. Build and publish the package on pypi by
 ```bash
 make clean_package
 make package && make publish
+```
+3. Create and push a tag for this version by
+```bash
+git tag -a [version] -m "describe this version"
+git push --tags
 ```
 
 ## Versioning
