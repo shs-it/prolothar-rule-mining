@@ -4,6 +4,7 @@ dist
 *.exe
 *.o
 *.egg-info
+*.so
 
 ### PYTHON ###
 __pycache__/
@@ -45,4 +46,5 @@ coverage.xml
 *.html
 *.cpp
 temp.pdf
+temp
 prolothar-rule-mining*
