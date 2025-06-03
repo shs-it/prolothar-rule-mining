@@ -17,8 +17,8 @@
 from typing import Union, List, Tuple
 
 from pm4py.algo.conformance.alignments.petri_net.variants.dijkstra_no_heuristics import apply as compute_alignment_with_pm4py
-from pm4py.objects.log.log import Trace as Pm4PyTrace
-from pm4py.objects.log.log import Event as Pm4PyEvent
+from pm4py.objects.log.obj import Trace as Pm4PyTrace
+from pm4py.objects.log.obj import Event as Pm4PyEvent
 from prolothar_rule_mining.models.converter.eventflow_graph_to_pm4py_petrinet_converter import EventFlowGraphToPm4pyPetrinetConverter
 
 from prolothar_rule_mining.models.event_flow_graph.alignment.alignment import Alignment

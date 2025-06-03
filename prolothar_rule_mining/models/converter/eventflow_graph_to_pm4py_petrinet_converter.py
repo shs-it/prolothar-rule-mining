@@ -16,9 +16,9 @@
 '''
 from typing import Tuple
 
-from pm4py.objects.petri.petrinet import PetriNet
-from pm4py.objects.petri import utils
-from pm4py.objects.petri.petrinet import Marking
+from pm4py.objects.petri_net.obj import PetriNet
+from pm4py.objects.petri_net.utils import petri_utils
+from pm4py.objects.petri_net.obj import Marking
 
 from prolothar_rule_mining.models.event_flow_graph import EventFlowGraph
 
@@ -53,15 +53,15 @@ class EventFlowGraphToPm4pyPetrinetConverter():
             petri_net.transitions.add(transition)
             petri_net.places.add(pre_place)
             petri_net.places.add(post_place)
-            utils.add_arc_from_to(pre_place, transition, petri_net)
-            utils.add_arc_from_to(transition, post_place, petri_net)
+            petri_utils.add_arc_from_to(pre_place, transition, petri_net)
+            petri_utils.add_arc_from_to(transition, post_place, petri_net)
 
         for edge in graph.edges():
             transition = PetriNet.Transition(
                 '%d_%d' % (edge.from_node.node_id, edge.to_node.node_id), None)
             petri_net.transitions.add(transition)
-            utils.add_arc_from_to(post_place_dict[edge.from_node], transition, petri_net)
-            utils.add_arc_from_to(transition, pre_place_dict[edge.to_node], petri_net)
+            petri_utils.add_arc_from_to(post_place_dict[edge.from_node], transition, petri_net)
+            petri_utils.add_arc_from_to(transition, pre_place_dict[edge.to_node], petri_net)
 
         initial_marking = Marking()
         initial_marking[post_place_dict[graph.source]] = 1
