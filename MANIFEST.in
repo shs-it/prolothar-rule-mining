@@ -4,6 +4,8 @@ include version.txt
 include requirements.txt
 global-include *.py
 global-include *.pyx
+global-include *.pyi
+global-include *.pxd
 global-include *.cpp
 global-include *.h
 global-include *.csv
